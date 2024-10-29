@@ -19,7 +19,7 @@ public class ExchangeApi {
     }
     public ExchangeApi() {
         try {
-            String url_str = "https://v6.exchangerate-api.com/v6/462b0975f7b87bc384c8f68c/latest/USD";
+            String url_str = "https://v6.exchangerate-api.com/v6/apikey/latest/USD";
 
             URL url = new URL(url_str);
             HttpURLConnection request = (HttpURLConnection) url.openConnection();

@@ -12,14 +12,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ExchangeApi {
-    private Map<String, Double> currencies = new HashMap<>();
+    private final Map<String, Double> currencies = new HashMap<>();
 
     public Map<String, Double> getCurrencies(){
         return currencies;
     }
     public ExchangeApi() {
         try {
-            String url_str = "https://v6.exchangerate-api.com/v6/apikey/latest/USD";
+            String url_str = "https://v6.exchangerate-api.com/v6/462b0975f7b87bc384c8f68c/latest/USD";
 
             URL url = new URL(url_str);
             HttpURLConnection request = (HttpURLConnection) url.openConnection();

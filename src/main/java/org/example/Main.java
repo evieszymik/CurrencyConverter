@@ -101,7 +101,7 @@ class MyCalc extends WindowAdapter implements ActionListener{
 
     public void actionPerformed(ActionEvent e){
         double result;
-        double value=0;
+        double value;
 
         String currencyFrom = choice1.getSelectedItem();
         String currencyTo = choice2.getSelectedItem();
@@ -109,7 +109,7 @@ class MyCalc extends WindowAdapter implements ActionListener{
             value=Double.parseDouble(textField1.getText());
             result=0;
 
-            if(currencyTo==currencyFrom)
+            if(currencyTo.equals(currencyFrom))
             {
                 result=value;
             }
@@ -117,10 +117,10 @@ class MyCalc extends WindowAdapter implements ActionListener{
             {
                 for(Map.Entry<String, Double> entry : currencyList.entrySet())
                 {
-                    if(currencyFrom==entry.getKey())
+                    if(currencyFrom.equals(entry.getKey()))
                     {
-                        result=value*entry.getValue();
-                        if(currencyTo=="USD")
+                        result=value/entry.getValue();
+                        if(currencyTo.equals("USD"))
                         {
                             break;
                         }
@@ -128,7 +128,7 @@ class MyCalc extends WindowAdapter implements ActionListener{
                         {
                             for(Map.Entry<String,Double> entry1 : currencyList.entrySet())
                             {
-                                if(currencyTo==entry1.getKey())
+                                if(currencyTo.equals(entry1.getKey()))
                                 {
                                     result=result*entry1.getValue();
                                     break;
